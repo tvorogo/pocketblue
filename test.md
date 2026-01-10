@@ -81,5 +81,29 @@ fastboot erase dtbo
 ```cmd
 fastboot boot path\to\recovery.img
 ```
+### Sideload
+```cmd
+adb shell twrp sideload
+```
+```cmd
+adb sideload path/to/fedora/bootmanager.zip
+```
+### Reboot
+```cmd
+adb reboot bootloader
+```
+#done
+
+<details>
+    <summary>How to use the boot picker</summary>
+
+| Action         | Key           |
+|----------------|---------------|
+| Next item      | `Volume down` |
+| Previous item  | `Volume up`   |
+| Select an item | `Power`       |
+
+</details>
+
 
 
