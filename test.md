@@ -92,7 +92,6 @@ adb sideload path/to/fedora/bootmanager.zip
 ```cmd
 adb reboot bootloader
 ```
-#done
 
 <details>
     <summary>How to use the boot picker</summary>
