@@ -5,6 +5,15 @@ on:
       fedora_branch:
         required: true
         type: string
+      device:
+        type: string
+        required: false
+      target_tag_override:
+        type: string
+        required: false
+      xiaomi_nabu_samsung_ufs:
+        type: boolean
+        required: true
   workflow_dispatch:
     inputs:
       fedora_branch:
@@ -12,8 +21,8 @@ on:
         description: 'fedora branch'
         required: true
         options:
-          - '42'
           - '43'
+          - '44'
           - 'rawhide'
         default: '43'
       device:
@@ -23,10 +32,20 @@ on:
         options:
           - 'all'
           - 'nothing-spacewar'
-          - 'oneplus-sdm845'
+          - 'qualcomm-sdm845'
           - 'xiaomi-nabu'
           - 'xiaomi-pipa'
+          - 'xunlong-orangepi3-lts'
         default: 'all'
+      target_tag_override:
+        type: string
+        description: 'override target tag'
+        required: false
+      xiaomi_nabu_samsung_ufs:
+        type: boolean
+        description: 'ARG: xiaomi_nabu_samsung_ufs'
+        required: true
+        default: false
   push:
     paths:
       - 'Containerfile'
@@ -60,10 +79,10 @@ jobs:
           vars_registry: ${{ vars.REGISTRY }}
           device: ${{ inputs.device || '' }}
           device_list: |
-            nothing-spacewar
-            oneplus-sdm845
+            qualcomm-sdm845
             xiaomi-nabu
             xiaomi-pipa
+            xunlong-orangepi3-lts
 
   build:
     needs: config
@@ -74,13 +93,14 @@ jobs:
       fail-fast: false
       matrix:
         device: ${{ fromJson(needs.config.outputs.devices) }}
-        desktop: [gnome-desktop, gnome-mobile, plasma-desktop, plasma-mobile, phosh]
+        desktop: [tty, gnome-desktop, gnome-mobile, plasma-desktop, plasma-mobile, phosh]
     uses: ./.github/workflows/helper-build-container.yml
     with:
       fedora_branch: ${{ inputs.fedora_branch || 43 }}
       registry: ${{ needs.config.outputs.registry }}
       device: ${{ matrix.device }}
       desktop: ${{ matrix.desktop }}
-      tag: ${{ needs.config.outputs.target_tag }}
+      tag: ${{ inputs.target_tag_override && inputs.target_tag_override || needs.config.outputs.target_tag }}
       latest: ${{ needs.config.outputs.latest }}
       expires: ${{ needs.config.outputs.expires }}
+      xiaomi_nabu_samsung_ufs: ${{ inputs.xiaomi_nabu_samsung_ufs || false }}

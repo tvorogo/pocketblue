@@ -6,10 +6,13 @@ set -uexo pipefail
 
 cp -arfT files/etc /etc
 
+if [ "$xiaomi_nabu_samsung_ufs" = "true" ]; then
+    cp -arfT files/samsung/etc /etc
+fi
+
 # Packages
 
 dnf -y install \
-    xiaomi-nabu-configs \
     xiaomi-nabu-firmware \
     alsa-ucm-conf-sm8150 \
     ath10k-shutdown \
@@ -32,7 +35,8 @@ dnf -y remove \
     kernel \
     kernel-core \
     kernel-modules \
-    kernel-modules-core
+    kernel-modules-core \
+    kernel-headers
 rm -rf /usr/lib/modules/*
 dnf -y install kernel
 rm -r /boot/dtb

@@ -17,7 +17,10 @@ This is a work-in-progress. During the installation process all data on your dev
 
 - [Xiaomi Pad 5](https://pocketblue.github.io/devices/xiaomi-nabu)
 - [Xiaomi Pad 6](https://pocketblue.github.io/devices/xiaomi-pipa)
-- [OnePlus 6/6T](https://pocketblue.github.io/devices/oneplus-sdm845)
+- [Qualcomm SDM845](https://pocketblue.github.io/devices/qualcomm-sdm845)
+    - [OnePlus 6/6T](https://pocketblue.github.io/devices/oneplus-sdm845)
+    - [Xiaomi Poco F1](https://pocketblue.github.io/devices/xiaomi-beryllium)
+- [Orange Pi 3 LTS](https://pocketblue.github.io/devices/xunlong-orangepi3-lts)
 
 ### Useful information
 
@@ -25,23 +28,27 @@ This is a work-in-progress. During the installation process all data on your dev
 - [Installing packages](https://pocketblue.github.io/tips-and-tricks/installing-packages)
 - [Using toolbox](https://pocketblue.github.io/tips-and-tricks/toolbox)
 - [Firefox mobile config packaged as flatpak](https://pocketblue.github.io/tips-and-tricks/flatpaks)
+- [Using fex-emu to run x86 apps on arm devices](https://pocketblue.github.io/tips-and-tricks/fex-emu)
+- [Encryption](https://pocketblue.github.io/tips-and-tricks/encryption)
+- [Backtick symbol on Xiaomi keyboards](https://pocketblue.github.io/tips-and-tricks/backtick-symbol)
 
 ### Related projects
 
-- [fedora-remix-mobility/fedora-kiwi-descriptions](https://github.com/fedora-remix-mobility/fedora-kiwi-descriptions) - KIWI image descriptions for Fedora Mobility
-- [samcday/sdm845-live-fedora](https://github.com/samcday/sdm845-live-fedora) - a compact Fedora UKI that can be directly booted from the OnePlus 6(T) bootloader
 - [timoxa0/pipa-fedora-builder](https://github.com/timoxa0/pipa-fedora-builder) - non-atomic Fedora for Xiaomi Pad 6
 - [nik012003/nabu-fedora-builder](https://github.com/nik012003/nabu-fedora-builder) - non-atomic Fedora for Xiaomi Pad 5
 - [jhuang6451/nabu_fedora](https://github.com/jhuang6451/nabu_fedora) - yet another non-atomic Fedora for Xiaomi Pad 5
 
 ### Chats
 
-You can find our main chat in Telegram: [t.me/fedoramobility](https://t.me/fedoramobility)
+Main chats:
+
+- Pocketblue Matrix space: [#pocketblue:federated.nexus](https://matrix.to/#/#pocketblue:federated.nexus)
+- Main Pocketblue Matrix room [#pocketblue-dev:federated.nexus](https://matrix.to/#/#pocketblue-dev:federated.nexus) is bridged with the [t.me/fedoramobility](https://t.me/fedoramobility) Telegram chat
+- Fedora Mobility general Matrix room: [#mobility:fedoraproject.org](https://matrix.to/#/#mobility:fedoraproject.org)
 
 Other related chats:
 
-- [matrix.to/#/#mobility:fedoraproject.org](https://matrix.to/#/#mobility:fedoraproject.org) - Fedora Mobility general chat
-- [matrix.to/#/#mobility-sdm845:fedoraproject.org](https://matrix.to/#/#mobility-sdm845:fedoraproject.org) - Fedora Mobility chat for sdm845 devices
+- [#mobility-sdm845:fedoraproject.org](https://matrix.to/#/#mobility-sdm845:fedoraproject.org) - Fedora Mobility room for sdm845 devices
 - [t.me/nabulinux](https://t.me/nabulinux) - Xiaomi Pad 5 Linux chat
 - [t.me/nabulinuxru](https://t.me/nabulinuxru) - Xiaomi Pad 5 Linux chat (ru)
 - [t.me/XiaomiPad5Official](https://t.me/XiaomiPad5Official) - Xiaomi Pad 5 ROMs chat
